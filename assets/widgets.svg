@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 400" width="1180" height="400" role="img" aria-label="Adelante widget presets: Soft Ivory, Deep Black, and Sacred Calm">
+  <defs>
+    <linearGradient id="ivory" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBF7EF"/><stop offset="1" stop-color="#F1E9DC"/></linearGradient>
+    <linearGradient id="black" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#171615"/><stop offset="1" stop-color="#090908"/></linearGradient>
+    <linearGradient id="ocean" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF3F3"/><stop offset="1" stop-color="#D9E9EA"/></linearGradient>
+    <filter id="lift" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.14"/></filter>
+  </defs>
+  <rect width="1180" height="400" fill="#ffffff" fill-opacity="0"/>
+
+  <!-- Soft Ivory -->
+  <g filter="url(#lift)">
+    <rect x="20" y="20" width="360" height="360" rx="26" fill="url(#ivory)" stroke="#E4DBCB"/>
+    <text x="52" y="150" font-family="Georgia,serif" font-style="italic" font-size="27" fill="#161513">
+      <tspan x="52" dy="0">Difficulties are</tspan>
+      <tspan x="52" dy="36">things that show</tspan>
+      <tspan x="52" dy="36">what men are.</tspan>
+    </text>
+    <text x="52" y="300" font-family="-apple-system,'Segoe UI',Arial,sans-serif" font-size="15" fill="#8B8578">Epictetus</text>
+    <text x="52" y="322" font-family="-apple-system,'Segoe UI',Arial,sans-serif" font-size="12.5" fill="#A39C8E">Discourses, Book I.24</text>
+    <rect x="52" y="336" width="30" height="2" rx="1" fill="#8F8A80"/>
+  </g>
+
+  <!-- Deep Black -->
+  <g filter="url(#lift)">
+    <rect x="410" y="20" width="360" height="360" rx="24" fill="url(#black)" stroke="#26241f"/>
+    <text x="442" y="150" font-family="Georgia,serif" font-style="italic" font-size="28" fill="#F8F5EF">
+      <tspan x="442" dy="0">Be still, and</tspan>
+      <tspan x="442" dy="38">know that I</tspan>
+      <tspan x="442" dy="38">am God.</tspan>
+    </text>
+    <text x="442" y="300" font-family="-apple-system,'Segoe UI',Arial,sans-serif" font-size="15" fill="#C7C3BA">King James Version</text>
+    <text x="442" y="322" font-family="-apple-system,'Segoe UI',Arial,sans-serif" font-size="12.5" fill="#9a968d">Psalm 46:10</text>
+    <rect x="442" y="336" width="30" height="2" rx="1" fill="#C7C3BA"/>
+  </g>
+
+  <!-- Sacred Calm / Ocean -->
+  <g filter="url(#lift)">
+    <rect x="800" y="20" width="360" height="360" rx="26" fill="url(#ocean)" stroke="#CBDEDE"/>
+    <text x="832" y="162" font-family="Georgia,serif" font-style="italic" font-size="28" fill="#102020">
+      <tspan x="832" dy="0">But lo! with</tspan>
+      <tspan x="832" dy="38">hardship goeth</tspan>
+      <tspan x="832" dy="38">ease.</tspan>
+    </text>
+    <text x="832" y="300" font-family="-apple-system,'Segoe UI',Arial,sans-serif" font-size="15" fill="#5f7779">The Qur'an — Pickthall</text>
+    <text x="832" y="322" font-family="-apple-system,'Segoe UI',Arial,sans-serif" font-size="12.5" fill="#7c9092">Ash-Sharh 94:5</text>
+    <rect x="832" y="336" width="30" height="2" rx="1" fill="#637B7D"/>
+  </g>
+</svg>
