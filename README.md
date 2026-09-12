@@ -6,7 +6,7 @@ Adelante is a Flutter motivation app whose main surface is the widget: on the Ho
 
 **In development for iOS and Android.** This repository is the public product and engineering showcase; application source is private.
 
-[Read the case study](https://yeegz.github.io/work/adelante/) · [Architecture](docs/ARCHITECTURE.md) · [About the developer](https://yeegz.github.io)
+[Read the case study](https://yousofselim.com/work/adelante/) · [Architecture](docs/ARCHITECTURE.md) · [About the developer](https://yousofselim.com)
 
 <p align="center">
   <img src="assets/screens/today.webp" width="29%" alt="Adelante Today screen showing a quotation with its source and widget customisation entry">
@@ -37,10 +37,10 @@ A Flutter screen, an iOS extension and an Android widget run in separate environ
 | Content preparation | TypeScript, Firebase and deterministic filtering |
 | Local behaviour | Cached content, shared payloads and source-preserving preferences |
 
-The [case study](https://yeegz.github.io/work/adelante/) documents the verified development snapshot, native integration, content library and test scope. It distinguishes completed implementation from release work still in progress.
+The [case study](https://yousofselim.com/work/adelante/) documents the verified development snapshot, native integration, content library and test scope. It distinguishes completed implementation from release work still in progress.
 
 ## My contribution
 
 Designed and built by **Yousof Selim**: product design, Flutter app, native widgets, content preparation and verification.
 
-[Explore my other work](https://yeegz.github.io/work/) · [Discuss a project](mailto:yousofselim2@gmail.com)
+[Explore my other work](https://yousofselim.com/work/) · [Discuss a project](mailto:yousofselim2@gmail.com)
