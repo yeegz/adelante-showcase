@@ -8,8 +8,9 @@ engineering decisions; it does not include source.
 1. **Widget-first.** The widgets are the product; the app configures them.
 2. **Offline-first.** The app is fully usable from a bundled, curated library. The
    cloud only adds fresh content — it is never required.
-3. **Private by design.** No account, no analytics/ad SDKs, no per-user data leaves
-   the device. Faith and preferences are local-only.
+3. **Local preferences.** No account is required and no third-party analytics or
+   advertising SDK is used. Faith and preferences stay on the device. Optional
+   aggregate event reporting is off until the reader consents.
 4. **One source of truth.** The widget shows exactly what the app last published.
 
 ## Layers
@@ -60,17 +61,18 @@ Adding a capability is one new key on both sides.
 - **Safety:** scripture ships with exact citations and public-domain translations;
   reflections are labeled as such; nothing invents attributions.
 
-### 6. Backend (Firebase — optional)
-- **Firestore** stores the content library, version records, sources, and reviews —
-  **no user data**.
+### 6. Backend (Firebase)
+- **Firestore** stores the content library, version records, sources, reviews and
+  optional aggregate usage counters. It does not build user or device profiles.
 - **Cloud Functions (TypeScript):**
   - `scheduledContentImport` — pulls from an **allow-list** of trusted, license-clean
     sources, validates, de-duplicates (text/citation fingerprint), quality-scores,
-    then auto-publishes trusted feeds or queues the rest for review, and bumps a
+    then publishes eligible records or queues the rest for review, and bumps a
     content version.
   - `getContent` — an HTTPS endpoint (with **App Check**) that returns the approved
     bundle with `?since=` delta support and CDN caching.
-  - admin curation callables (approve / reject) and a one-time admin bootstrap.
+  - admin curation callables (approve / reject).
+  - opt-in aggregate event collection and an authenticated reporting endpoint.
 - **Client sync** is an anonymous, read-only HTTPS fetch — it sends no preferences or
   identifiers. Approved content is merged into an on-device cache that feeds the
   widgets; any failure leaves the bundled/cached library intact.
@@ -81,17 +83,36 @@ Adding a capability is one new key on both sides.
 | --- | --- |
 | Categories, faith, favorites, widget configs, theme | On device only |
 | Motivational content | Public library (device + optional backend) |
-| Analytics / ads / identifiers | **None** |
+| Optional usage counts | Aggregate server counters, only after consent; no user or device profile |
+| Advertising | None |
 
-The only network activity is the optional, anonymous content fetch. Uninstalling
-removes all local data; in-app resets clear it too.
+Content updates use the backend. If a reader opts into usage reporting, allowlisted
+events also go to the server; preference values and free text are not sent. Fresh
+event IDs support retry deduplication, not user identification. Reporting counts
+consenting sessions and events, not unique people. Turning it off clears queued
+events. Local preferences and saved content remain on the device.
 
-## Quality
+## Quality and release status
 
-- ~80 automated tests: content-filter correctness, no-starvation coverage across
-  every category/faith, refresh behavior, widget parity (source-level), and the
-  sync/cache layer.
-- `flutter analyze` clean; real-device **iOS** and **Android** release builds.
+Source inventory checked on 12 October 2026:
+
+- 478 Dart test declarations across 77 files: 363 unit/contract and 115 widget
+  declarations. Native source-text guards are included; they do not execute the
+  Swift or Kotlin behaviour.
+- 105 backend test declarations: 68 unit and 37 emulator/operations declarations.
+- 20 authored Watch XCTest methods: 11 core and 9 UI. Generated `.build` files
+  are excluded.
+
+These are source counts, not a coverage percentage or a fresh full-suite run.
+The build 21 delivery note dated 2 October records 566 executed Flutter tests
+passing; parameterised declarations produce more executed cases. The configured
+GitHub Actions workflow had no recorded runs when checked on 12 October.
+
+Adelante 1.0.0 is [live on the App Store](https://apps.apple.com/us/app/adelante-daily-quotes/id6816598027)
+since 4 October 2026, including its Apple Watch app and Messages extension.
+Android widgets are implemented, but the Android app is not published on Google
+Play. The [case study](https://yousofselim.com/work/adelante/) documents the release
+scope and remaining platform checks.
 
 ## Tooling
 
