@@ -45,7 +45,7 @@ The 12 October 2026 source inventory contains **478 Dart test declarations acros
 
 The build 21 delivery note dated 2 October records **566 executed Flutter tests passing**. Parameterised declarations can produce several executed cases, so this is a different measure from the declaration count. GitHub Actions is configured, but no workflow runs were recorded on GitHub when checked on 12 October; the release evidence comes from local checks.
 
-The iOS app is released as version 1.0.0. Android release signing, Play configuration and publication remain pending.
+The iOS app is on the App Store; version 1.1.0, a redesign, went live on 2 November 2026. Android is in Google Play closed testing.
 
 ## My contribution
 
